@@ -10,13 +10,14 @@
   align-items: center;
   justify-content: center;
 
-  background-color: #b8336a;
+  background-color: #7575FF;
   padding: 10px;
   font-size: calc(10px + 2vmin);
 }
 
 .App-main {
   display: flex;
+  flex-direction: column;
   flex: 1;
   overflow: auto;
 }

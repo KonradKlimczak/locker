@@ -11,8 +11,14 @@ export const getData = (rawData: any) => {
           name: competitor.athlete.displayName,
           position: competitor.status.position.displayName,
           score: competitor.score.displayValue,
-          roundsTotal: 0,
-          strokesTotal: 0,
+          roundsTotal: competitor.linescores.reduce(
+            (total: number, score: any) => total + score.value,
+            0
+          ),
+          strokesTotal:competitor.linescores.reduce(
+            (total: number, score: any) => total + score.inScore,
+            0
+          ),
         });
       }
     }
